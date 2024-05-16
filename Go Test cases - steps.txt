@@ -304,7 +304,7 @@ K] GroupMembershipReqTestAdvance:(bar- 14)
 	14) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
 	15) Simple De-Register
 
-J] GroupMemberDataReqTest:(bar- 22)
+L] GroupMemberDataReqTest:(bar- 22)
 	1) Target User info -> contact, if empty, format
 	2) Send Group-Member-Data-Req ... 404 expected
 	3) Valid Register
@@ -329,22 +329,30 @@ J] GroupMemberDataReqTest:(bar- 22)
 	22) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
 	23) Simple De-Register
 
-I] GroupMemberDataReqTestAdvance:(bar- 14)
-	1) Target User info -> contact, if empty, format
-	2) Valid Register
-	3) Send Publish for Service-Auth
-	4) Check scope ... Test
-	5) Check scope ... Admin
-	6) Send Group-Member-Data-Req ... error
- 	7) add scope - crud
-	8) Send Group-Member-Data-Req ... valid ... Single-domain list
-	9) get other domains associated
-	10) add scope - list-share
-	11) Group-Member-Data-Req for ... check multi-domains
-	12) Delete the scope - list-share
-	13) Delete the scope - crud
-	14) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
-	15) Simple De-Register
+M] GroupMemberDataReqTestAdvance:(bar- 14)
+	1)	Valid Register
+	2)	Send Publish for Service-Auth
+	3)	Check scope ... Test
+	4)	Check scope ... Admin
+	5)	Send Group-Member-Data-Req ... error
+	6)	add scope - crud
+	7)	Send Group-Member-Data-Req ... valid - self
+	8) 	get other user of our domain
+	9)	Send Group-Member-Data-Req ... valid - other user
+	10) get user from parent domain
+	11)	Check scope - list-share (system-admin)
+	12)	Send Group-Member-Data-Req ... Unknown-Target ... failure
+	13)	add scope - list-share
+	14)	Send Group-Member-Data-Req ... Unknown-Target ... failure
+	15)	Send Group-Member-Data-Req ... Other Domain-Target
+	16) Delete the scope - list-share
+	17) Delete the scope - crud
+	18)	Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	19)	Simple De-Register
+
+
+
+
 
 
 ***XML messages
