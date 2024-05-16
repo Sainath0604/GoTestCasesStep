@@ -232,7 +232,26 @@ G] UserStatusTestRace:(bar- 18)
 	17) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
 	18) Simple De-Register
 
-h] FAListReqTestAdvance:(bar- 14)
+H] FAListTest:(bar- 15)
+	1) Target User info -> contact, if empty, format
+	2) Send FA-List-Req ... 404 expected
+	3) Valid Register
+	4) Send FA-List-Req ... 403 expected
+	5) Send Publish for Service-Auth
+	6) Check scope ... Test
+	7) Check scope ... Admin
+	8) Send FA-List-Req ... error (missing admin)
+ 	9) add scope - crud
+	10) Send FA-List-Req ... Empty-IMPU
+	11) Send FA-List-Req ... Incorrect-IMPU
+	12) Send FA-List-Req ... Missing-IMPU
+	13) Send FA-List-Req ... Incorrect-XML
+	14) Send FA-List-Req ... valid (FA list expected)
+	15) Delete the scope - crud
+	16) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	17) Simple De-Register
+
+I] FAListReqTestAdvance:(bar- 14)
 	1) Target User info -> contact, if empty, format
 	2) Valid Register
 	3) Send Publish for Service-Auth
@@ -249,7 +268,26 @@ h] FAListReqTestAdvance:(bar- 14)
 	14) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
 	15) Simple De-Register
 
-I] GroupMembershipReqTestAdvance:(bar- 14)
+J] GroupMembershipReqTest:(bar- 15)
+	1) Target User info -> contact, if empty, format
+	2) Send Group-Membership-Req ... 404 expected
+	3) Valid Register
+	4) Send Group-Membership-Req ... 403 expected
+	5) Send Publish for Service-Auth
+	6) Check scope ... Test
+	7) Check scope ... Admin
+	8) Send Group-Membership-Req ... error (missing admin)
+ 	9) add scope - crud
+	10) Send Group-Membership-Req ... Empty-IMPU
+	11) Send Group-Membership-Req ... Incorrect-IMPU
+	12) Send Group-Membership-Req ... Missing-IMPU
+	13) Send Group-Membership-Req ... Incorrect-XML
+	14) Send Group-Membership-Req ... valid (Group-Membership list expected)
+	15) Delete the scope - crud
+	16) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	17) Simple De-Register
+
+K] GroupMembershipReqTestAdvance:(bar- 14)
 	1) Target User info -> contact, if empty, format
 	2) Valid Register
 	3) Send Publish for Service-Auth
@@ -291,9 +329,25 @@ J] GroupMemberDataReqTest:(bar- 22)
 	22) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
 	23) Simple De-Register
 
+I] GroupMemberDataReqTestAdvance:(bar- 14)
+	1) Target User info -> contact, if empty, format
+	2) Valid Register
+	3) Send Publish for Service-Auth
+	4) Check scope ... Test
+	5) Check scope ... Admin
+	6) Send Group-Member-Data-Req ... error
+ 	7) add scope - crud
+	8) Send Group-Member-Data-Req ... valid ... Single-domain list
+	9) get other domains associated
+	10) add scope - list-share
+	11) Group-Member-Data-Req for ... check multi-domains
+	12) Delete the scope - list-share
+	13) Delete the scope - crud
+	14) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	15) Simple De-Register
 
 
-*** XML messages
+***XML messages
 //Group Member Data Req
 
 <?xml version="1.0" encoding="UTF-8"?>
