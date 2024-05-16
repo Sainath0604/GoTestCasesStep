@@ -1,0 +1,312 @@
+A] UserListTest:(bar- 15)
+	1) Target User info -> contact, if empty, format
+	2) Send User-List-Req ... 404 expected
+	3) Valid Register
+	4) Send User-List-Req ... 403 expected
+	5) Send Publish for Service-Auth
+	6) Check scope ... Test
+	7) Check scope ... Admin
+	8) Send User-List-Req ... error
+ 	9) add scope - crud
+	10) Send User-List-Req ... Empty-IMPU
+	11) Send User-List-Req ... Incorrect-IMPU
+	12) Send User-List-Req ... Missing-IMPU
+	13) Send User-List-Req ... Incorrect-XML
+	14) Send User-List-Req ... valid (user list expected)
+	15) Delete the scope - crud
+	16) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	17) Simple De-Register
+
+B] UserListTestAdvance:(bar- 14)
+	1) Target User info -> contact, if empty, format
+	2) Valid Register
+	3) Send Publish for Service-Auth
+	4) Check scope ... Test
+	5) Check scope ... Admin
+	6) Send User-List-Req ... error
+ 	7) add scope - crud
+	8) Send User-List-Req ... valid ... Single-domain list
+	9) get other domains associated
+	10) add scope - list-share
+	11) user-list for ... check multi-domains
+	12) Delete the scope - list-share
+	13) Delete the scope - crud
+	14) Delete the scope - crud
+	15) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	16) Simple De-Register
+
+C] UserStatusTest:(bar- 38)
+	1) Send User-Del-Req ... 404 expected
+	2) Send User-Activate-Req ... 404 expected
+	3) Valid Register
+	4) Send User-Del-Req ... 403 expected
+	5) Send User-Activate-Req ... 403 expected
+	6) Send Publish for Service-Auth
+ 	7) Check scope ... Test
+	8) Check scope ... Admin
+	9) Send User-Del-Req ... error
+	10) Send User-Activate-Req ... error
+	11) add scope - crud
+	12) Send User-Del-Req ... Empty-Origin
+	13) Send User-Activate-Req ... Empty-Origin
+	14) Send User-Del-Req ... Incorrect-Origin
+	15) Send User-Activate-Req ... Incorrect-Origin
+	16) Send User-Del-Req ... Missing-Origin
+	17) Send User-Activate-Req ... Missing Origin
+	18) Send User-Del-Req ... Incorrect-XML
+	19) Send User-Activate-Req ... Incorrect XML
+	20) Send User-Del-Req ... Empty-Target
+	21) Send User-Activate-Req ... Empty-Target
+	22) Send User-Del-Req ... Incorrect-Target
+	23) Send User-Activate-Req ... Incorrect-Target
+	24) Send User-Del-Req ... Unknown-Target
+	25) Send User-Activate-Req ... Unknown-Target
+	26) Send User-Del-Req ... Unknown-User (Self Domain)
+	27) Send User-Activate-Req ... Unknown-User (Self Domain)
+	28) Send User-Del-Req ... valid - self ... error
+	29) Send User-Activate-Req ... valid - self ... error
+	30) get user from parent domain
+	31) Activate the activated user
+	32) Send User-Del-Req ... valid - other user
+	33) Send User-Del-Req ... valid - other user ... error (error expected as user is already deleted)
+	34) Activate the deleted user
+	35) Activate the activated user
+	36) Delete the scope - crud
+	37) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	38) Simple De-Register
+
+D] UserStatusTestAdvance:(bar- 31)
+	1) Valid Register
+	2) Send Publish for Service-Auth
+ 	3) Check scope ... Test
+	4) Check scope ... Admin
+	5) Send User-Del-Req ... error
+	6) Send User-Activate-Req ... error
+	7) add scope - crud
+	8) Send User-Del-Req ... valid - self ... error
+	9) Send User-Activate-Req ... valid - self ... error
+	10) get user from parent domain
+	11) Activate the activated user
+	12) Send User-Del-Req ... valid - other user
+	13) Send User-Del-Req ... valid - other user ... error (error expected as user is already deleted)
+	14) Activate the deleted user
+	15) Activate the activated user
+	16) Check scope ... list-share
+	17) Send User-Del-Req ... Unknown-Target
+	18) Send User-Activate-Req ... Unknown-Target
+	19) add scope - list-share
+	20) Send User-Del-Req ... Out-off-Bound-Target
+	21) Send User-Activate-Req ... Out-off-Bound-Target
+	22) Get other domain user
+	23) Send User-Activate-Req ... Other domain
+	24) Send User-Del-Req-Other-Domain-Valid
+	25) Send User-Del-Req-Other-Domain-Valid - Repeat
+	26) Send User-Activation-Req Other-Domain - Valid
+	27) Send User-Activation-Req-Other-Domain-Valid - Repeat
+	28) Delete the scope - list-share
+	29) Delete the scope - crud
+	30) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	31) Simple De-Register
+
+E] UserCreateTest:(bar- 63)
+	1) Send User-Add-Req ... 404 expected
+	2) Valid Register
+	3) Send User-Add-Req ... 403 expected
+	4) Send Publish for Service-Auth
+	5) Check scope ... Test
+	6) Check scope ... Admin
+ 	7) Send User-Add-Req ... error
+	8) add scope - crud
+	9) Send User-Add-Req ... Empty-Origin
+	10) Send User-Add-Req ... Incorrect-Origin
+	11) Send User-Add-Req ... Missing-Origin
+	12) Send User-Add-Req ... Incorrect-XML
+	13) Send User-Add-Req ... Empty-Target IMPU
+	14) Send User-Add-Req ... Incorrect-Target IMPU
+	15) Send User-Add-Req ... Incorrect-Target- Validationn fail
+	16) Send User-Del-Req ... Unknown-Target IMPU
+	17) Send User-Add-Req - self ... error
+	18) get user from parent domain
+	19) Send User-Add-Req - already Present User in active state
+	20) Send User-Add-Req ... other user
+	21) Send User-Add-Req - already Present User in deactivate state
+	22) Activate the deleted user
+	23) Send User-Add-Req ... Missing Role
+	24) Send User-Add-Req ... Incorrect Role
+	25) Get Valid Role
+	26) Send User-Add-Req ... Valid (IMPU, Role Only)
+	27) Get User Data
+	28) Register with new user
+	29) De-Register with new user
+	30) Delete the user
+	31) Send User-Add-Req ... with all fields Valid
+	32) Get User Data
+	33) Register with new user
+	34) De-Register with new user
+	35) Delete the user
+	36) Send User-Add-Req ... with invalid first name
+	37) Get User Data
+	38) Register with new user
+	39) De-Register with new user
+	40) Delete the user
+	41) Send User-Add-Req ... with invalid last name
+	42) Get User Data
+	43) Register with new user
+	44) De-Register with new user
+	45) Delete the user
+	46) Send User-Add-Req ... with invalid ptt-id
+	47) Get User Data
+	48) Register with new user
+	49) De-Register with new user
+	50) Delete the user
+	51) Send User-Add-Req ... with invalid data-id
+	52) Get User Data
+	53) Register with new user
+	54) De-Register with new user
+	55) Delete the user
+	56) Send User-Add-Req ... with invalid video-id
+	57) Get User Data
+	58) Register with new user
+	59) De-Register with new user
+	60) Delete the user
+	61) Delete the scope - crud
+	62) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	63) Simple De-Register
+
+F] UserCreateTestAdvance:(bar- 37)
+	1) Valid Register
+	2) Send Publish for Service-Auth
+	3) Check scope ... Test
+	4) Check scope ... Admin
+	5) Check scope ... list-share
+	6) add scope - crud
+ 	7) Send User-Add-Req - self ... error
+	8) get user from parent domain
+	9) Send User-Add-Req - already Present User in active state
+	10) Send User-Add-Req ... other user
+	11) Send User-Add-Req - already Present User in deactivate state
+	12) Activate the deleted user
+	13) Get Valid Role
+	14) Send User-Add-Req ... Valid (IMPU, Role Only)
+	15) Get User Data
+	16) Register with new user
+	17) De-Register with new user
+	18) Delete the user
+	19) get user from parent domain
+	20) find the other user
+	21) Send User-Add-Req ... IMPU4 - Failure (missing scope)
+	22) Add scope - list-share
+	23) UserAdd-Existing-Active from other domain
+	24) Send User-Add-Req ... Incorrect Format
+	25) Send User-Add-Req ... Incorrect Target IMPU - Validationn fail
+	26) Send User-Add-Req ... Unknown-Target User
+	27) Send User-Add-Req ... Missing Role
+	28) Send User-Add-Req ... Incorrect Role
+	29) Send User-Add-Req ... with all fields Valid
+	30) Get User Data
+	31) Register with new user
+	32) De-Register with new user
+	33) Delete the user
+	34) Delete the scope - list-share
+	35) Delete the scope - crud
+	36) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	37) Simple De-Register
+	
+G] UserStatusTestRace:(bar- 18)
+	1) Valid Register
+	2) Send Publish for Service-Auth
+	3) Check scope ... Test
+	4) Check scope ... Admin
+	5) add scope - crud
+	6) get user from parent domain
+ 	7) Register Other User
+	8) Service Auth Other User
+	9) Check active user list
+	10) Send User-Del-Req ... valid - other user ... FAIL
+	11) Send User-Activation-Req ... valid - other user ... FAIL
+	12) Send User-State-Off-Req ... FAIL
+	13) Send User-State-On-Req ... FAIL
+	14) Service-Auth-Cancel for Other User
+	15) De-Register for other user
+	16) Delete the scope - crud
+	17) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	18) Simple De-Register
+
+h] FAListReqTestAdvance:(bar- 14)
+	1) Target User info -> contact, if empty, format
+	2) Valid Register
+	3) Send Publish for Service-Auth
+	4) Check scope ... Test
+	5) Check scope ... Admin
+	6) Send FA-List-Req ... error
+ 	7) add scope - crud
+	8) Send FA-List-Req ... valid ... Single-domain list
+	9) get other domains associated
+	10) add scope - list-share
+	11) FA-list for ... check multi-domains
+	12) Delete the scope - list-share
+	13) Delete the scope - crud
+	14) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	15) Simple De-Register
+
+I] GroupMembershipReqTestAdvance:(bar- 14)
+	1) Target User info -> contact, if empty, format
+	2) Valid Register
+	3) Send Publish for Service-Auth
+	4) Check scope ... Test
+	5) Check scope ... Admin
+	6) Send FA-List-Req ... error
+ 	7) add scope - crud
+	8) Send FA-List-Req ... valid ... Single-domain list
+	9) get other domains associated
+	10) add scope - list-share
+	11) FA-list for ... check multi-domains
+	12) Delete the scope - list-share
+	13) Delete the scope - crud
+	14) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	15) Simple De-Register
+
+
+Group Member Data Req - normal
+FA List Req			  - advance - done
+Group Membership Req  - advance
+
+//Group Member Data Req
+
+<?xml version="1.0" encoding="UTF-8"?>
+<message organization="MCLabs Pvt Ltd" copyright="mw-mcs@mclabs">
+	<info section="CRUD" branch="Group-Member-Data-Req">
+		<req>
+			<origin uri="${self-user-impu}" />
+			<target uri="${group-uri}"  />
+		</req>
+	</info>
+</message>
+
+// FA List Req
+
+<?xml version="1.0" encoding="UTF-8"?>
+<message organization="MCLabs Pvt Ltd" copyright="mw-mcs@mclabs">
+	<info section="CRUD" branch="FA-List-Req">
+		<req>
+			<origin uri="${self-user-impu}" />
+		</req>
+	</info>
+</message>
+
+// Group Membership Req
+
+<?xml version="1.0" encoding="UTF-8"?>
+<message organization="MCLabs Pvt Ltd" copyright="mw-mcs@mclabs">
+	<info section="Info" branch="Group-Membership-Req">
+		<req>
+			<origin uri="${self-user-impu}" />
+		</req>
+	</info>
+</message>
+
+
+
+
+
+
