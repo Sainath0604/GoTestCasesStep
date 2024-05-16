@@ -255,22 +255,45 @@ I] GroupMembershipReqTestAdvance:(bar- 14)
 	3) Send Publish for Service-Auth
 	4) Check scope ... Test
 	5) Check scope ... Admin
-	6) Send FA-List-Req ... error
+	6) Send Group-Membership-Req ... error (missing admin)
  	7) add scope - crud
-	8) Send FA-List-Req ... valid ... Single-domain list
+	8) Send Group-Membership-Req ... valid ... (group list)
 	9) get other domains associated
 	10) add scope - list-share
-	11) FA-list for ... check multi-domains
+	11) Group-list for ... check multi-domains
 	12) Delete the scope - list-share
 	13) Delete the scope - crud
 	14) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
 	15) Simple De-Register
 
+J] GroupMemberDataReqTest:(bar- 22)
+	1) Target User info -> contact, if empty, format
+	2) Send Group-Member-Data-Req ... 404 expected
+	3) Valid Register
+	4) Send Group-Member-Data-Req ... 403 expected
+	5) Send Publish for Service-Auth
+	6) Check scope ... Test
+	7) Check scope ... Admin
+	8) Send Group-Member-Data-Req ... error - (missing admin)
+ 	9) add scope - crud
+	10) Send Group-Member-Data-Req ... Empty-Origin
+	11) Send Group-Member-Data-Req ... Incorrect-Origin
+	12) Send Group-Member-Data-Req ... Missing-Origin
+	13) Send Group-Member-Data-Req ... Incorrect-XML
+	14) Send Group-Member-Data-Req ... Empty-Target
+	15) Send Group-Member-Data-Req ... Incorrect-Target
+	16) Send Group-Member-Data-Req ... Missing-Target
+	17) Send Group-Member-Data-Req ... Unknown-Target
+	18) Send Group-Member-Data-Req ... valid - self
+	19) get user from parent domain
+	20) Send Group-Member-Data-Req ... valid - other user
+	21) Delete the scope - crud
+	22) Send Publish for Service-Auth with Expiry 0 ... Service-Auth-Cancel
+	23) Simple De-Register
 
-Group Member Data Req - normal
-FA List Req			  - advance - done
-Group Membership Req  - advance
 
+
+*** XML messages
 //Group Member Data Req
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -304,6 +327,7 @@ Group Membership Req  - advance
 		</req>
 	</info>
 </message>
+
 
 
 
